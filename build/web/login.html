@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-image: url(https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+                background-size: 100%;
+                background-repeat: no-repeat;
+
+            }
+            #container {
+                width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f4f4f4;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Heading style */
+            h1 {
+                text-align: center;
+                font-family: 'Arial', sans-serif;
+                color: #333;
+            }
+
+            /* Form styling */
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            /* Input fields styling */
+            input[type="text"], input[type="password"] {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            /* Button styling */
+            .button {
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                text-align: center;
+                transition: background-color 0.3s ease;
+            }
+
+            /* Button hover effect */
+            .button:hover {
+                background-color: #45a049;
+            }
+
+            /* Reset button styling */
+            input[type="reset"] {
+                background-color: #f44336;
+            }
+
+            input[type="reset"]:hover {
+                background-color: #e53935;
+            }
+
+            /* Link styling */
+            a {
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+                color: #4CAF50;
+                text-decoration: none;
+                font-size: 14px;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: #388e3c;
+            }
+
+            /* Center the reCAPTCHA widget */
+            .g-recaptcha {
+                display: flex;
+                justify-content: center;
+            }
+
+        </style>
+
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Login Information</h1>
+            <div>
+                <form action="MainController" method="POST">
+                    User ID<input type="text" name="userID"></br>
+                    Password<input type="password" name="password"></br>
+                    <div class="g-recaptcha" data-sitekey="6LcrWwwqAAAAAK8feAuh03aCKVVhAlp9QtQfbYWz" style="justify-content: center; margin-left: 50px" ></div>
+                    <input type="submit" name="action" value="Login" class="button">
+                    <input type="reset" value="Reset" class="button"></br>
+                </form>
+                <a href="MainController?action=Create_Page">Create Account</a>
+                <a href="https://accounts.google.com/o/oauth2/auth?scope=profile email&redirect_uri=http://localhost:8080/PRJ301_B3W_JSTL/LoginGGController&response_type=code&client_id=1049695810432-5v81hk149724h9nmo2tg3ua4n028pj3r.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>
+
+            </div>
+        </div>
+        <form action="MainController" method="POST">
+            <input type="submit" name="action" value="topuser" class="button" />
+        </form>
+
+
+
+
+    </body>
+</html>
